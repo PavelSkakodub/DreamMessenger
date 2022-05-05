@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using DreamMessenger.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace DreamMessenger.Data
 {
@@ -15,18 +16,18 @@ namespace DreamMessenger.Data
         public DbSet<MessageFilesUser> MessageFiles { get; set; }
         public DbSet<Friends> Friends { get; set; } 
 
-        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
-            : base(options)
-        {
-        }
+        //конфигурации из appsettings.json
+        private IConfiguration Configuration { get; }
 
-        //пустой конструктор для работы с таблицами (CRUD)
-        public AppIdentityDbContext() { }
+        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options, IConfiguration configuration):base(options)
+        {
+            Configuration = configuration;
+        }
 
         //настройки приложения (строка подключения в д.случае)
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database=DreamMessenger;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(Configuration["ConnectionString"]);//"Server=(localdb)\\MSSQLLocalDB; Database=DreamMessenger;Trusted_Connection=true");
         }
 
         //настройки моделей
@@ -106,7 +107,11 @@ namespace DreamMessenger.Data
             builder.Property(x => x.Time).IsRequired().HasDefaultValue(System.DateTime.Now);
 
             //связь один к многим между сообщением и прикрепленными файлами, с настройкой удаления
-            builder.HasMany(x => x.MessageFiles).WithOne(x => x.MessageUser).HasForeignKey(x => x.MessageUserId).OnDelete(DeleteBehavior.Cascade);
+            builder
+                .HasMany(x => x.MessageFiles)
+                .WithOne(x => x.MessageUser)
+                .HasForeignKey(x => x.MessageUserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 
