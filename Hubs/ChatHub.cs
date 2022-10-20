@@ -1,7 +1,6 @@
 ﻿using DreamMessenger.Models;
 using Microsoft.AspNetCore.SignalR;
 using System.Diagnostics;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DreamMessenger.Hubs
@@ -10,7 +9,7 @@ namespace DreamMessenger.Hubs
     {
         private readonly AppUserManager _userManager; //класс для работы с пользователями
 
-        public ChatHub(AppUserManager userManager) //переедаём в конструктор менеджер юзеров
+        public ChatHub(AppUserManager userManager) //передаём в конструктор менеджер юзеров
         {
             _userManager = userManager;
         }
