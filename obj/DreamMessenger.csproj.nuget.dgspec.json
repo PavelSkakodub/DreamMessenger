@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\win10\\source\\repos\\DreamMessenger\\DreamMessenger.csproj": {}
+    "/Users/pskakodub/RiderProjects/DreamMessenger/DreamMessenger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\win10\\source\\repos\\DreamMessenger\\DreamMessenger.csproj": {
+    "/Users/pskakodub/RiderProjects/DreamMessenger/DreamMessenger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\win10\\source\\repos\\DreamMessenger\\DreamMessenger.csproj",
+        "projectUniqueName": "/Users/pskakodub/RiderProjects/DreamMessenger/DreamMessenger.csproj",
         "projectName": "DreamMessenger",
-        "projectPath": "C:\\Users\\win10\\source\\repos\\DreamMessenger\\DreamMessenger.csproj",
-        "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\win10\\source\\repos\\DreamMessenger\\obj\\",
+        "projectPath": "/Users/pskakodub/RiderProjects/DreamMessenger/DreamMessenger.csproj",
+        "packagesPath": "/Users/pskakodub/.nuget/packages/",
+        "outputPath": "/Users/pskakodub/RiderProjects/DreamMessenger/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/pskakodub/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,10 +87,25 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -101,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/pskakodub/.dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
